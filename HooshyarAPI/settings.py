@@ -58,7 +58,9 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1",
-    "https://irhooshyar.com"
+    "https://irhooshyar.com",
+    "virtualjuristic.datakaveh.com"
+
 ]
 
 ROOT_URLCONF = 'HooshyarAPI.urls'
