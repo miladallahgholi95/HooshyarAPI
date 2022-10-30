@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure--2k-ex2twiv_=5m0#zn&y0uc!f4l&um-5_(rd*zn9-1)*9bc(w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -61,8 +60,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://irhooshyar.com",
     "http://virtualjuristic.datakaveh.com",
     "https://virtualjuristic.datakaveh.com"
-
 ]
+
+
 
 ROOT_URLCONF = 'HooshyarAPI.urls'
 
