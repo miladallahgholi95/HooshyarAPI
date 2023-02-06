@@ -92,7 +92,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'CONN_MAX_AGE': 60,
-        'NAME': 'CyberMapDB_v4',
+        'NAME': 'RahnamudDB',
         'USER': 'dbadmin',
         'PASSWORD': '123456789',
         'HOST': 'localhost',
