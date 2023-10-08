@@ -90,13 +90,14 @@ WSGI_APPLICATION = 'HooshyarAPI.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'CONN_MAX_AGE': 60,
-        'NAME': 'RahnamudDB',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'CONN_MAX_AGE': 30,
+        'NAME': "Hooshyar2DB",
+        # DATABASE_NAME if os.environ.get('DB_FA_NAME') is None else os.environ.get('DB_FA_NAME'),
         'USER': 'dbadmin',
         'PASSWORD': '123456789',
         'HOST': 'localhost',
-        'PORT': '3333',
+        'PORT': '3306'
     }
 }
 
