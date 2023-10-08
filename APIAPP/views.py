@@ -27,10 +27,10 @@ def SearchDocument_ES_web(request, text):
     for i in range(result.__len__()):
         result[i]["_source"]["approval_reference_name"] = result[i]["_source"]["category"]
         date = "نامشخص"
-        if result_doc['_source']['datetime'] is not None and result_doc['_source']['datetime']["year"] != 0:
-            year = result_doc['_source']['datetime']["year"]
-            month = result_doc['_source']['datetime']["month"]["number"]
-            day = result_doc['_source']['datetime']["day"]["number"]
+        if result[i]['_source']['datetime'] is not None and result[i]['_source']['datetime']["year"] != 0:
+            year = result[i]['_source']['datetime']["year"]
+            month = result[i]['_source']['datetime']["month"]["number"]
+            day = result[i]['_source']['datetime']["day"]["number"]
             date = str(year) + "/" + str(month) + "/" + str(day)
 
         result[i]["_source"]["approval_date"] = date
