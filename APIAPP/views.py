@@ -7,12 +7,12 @@ bucket_size = 1000
 search_result_size = 100
 
 def SearchDocument_ES_web(request, text):
-    res_query = {"match_phrase": {"name": text}}
+    res_query = {"match_phrase": {"content": text}}
 
-    index_name = "doticfull_document"
+    index_name = "hooshyar2_document_index"
 
     response = client.search(index=index_name,
-                             _source_includes=['document_id', 'name', 'approval_reference_name', 'approval_date'],
+                             _source_includes=['name', 'category', 'datetime'],
                              request_timeout=40,
                              query=res_query,
                              size=10)
@@ -23,5 +23,16 @@ def SearchDocument_ES_web(request, text):
 
     if total_hits == 10000:
         total_hits = client.count(body={"query": res_query}, index=index_name, doc_type='_doc')['count']
+
+    for i in range(result.__len__()):
+        result[i]["_source"]["approval_reference_name"] = result[i]["_source"]["category"]
+        date = "نامشخص"
+        if result_doc['_source']['datetime'] is not None and result_doc['_source']['datetime']["year"] != 0:
+            year = result_doc['_source']['datetime']["year"]
+            month = result_doc['_source']['datetime']["month"]["number"]
+            day = result_doc['_source']['datetime']["day"]["number"]
+            date = str(year) + "/" + str(month) + "/" + str(day)
+
+        result[i]["_source"]["approval_date"] = date
 
     return JsonResponse({"result": result,'total_hits': total_hits})
