@@ -57,12 +57,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://127.0.0.1",
-    "https://irhooshyar.com",
-    "http://virtualjuristic.datakaveh.com",
-    "https://virtualjuristic.datakaveh.com"
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 
