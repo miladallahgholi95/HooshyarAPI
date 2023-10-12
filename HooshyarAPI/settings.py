@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'corsheaders',
+    'letsencrypt',
     'django_extensions',
     'after_response',
     'rest_framework',
@@ -56,14 +57,12 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://127.0.0.1",
-#     "https://irhooshyar.com",
-#     "http://virtualjuristic.datakaveh.com",
-#     "https://virtualjuristic.datakaveh.com"
-# ]
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1",
+    "https://irhooshyar.com",
+    "http://virtualjuristic.datakaveh.com",
+    "https://virtualjuristic.datakaveh.com"
+]
 
 
 

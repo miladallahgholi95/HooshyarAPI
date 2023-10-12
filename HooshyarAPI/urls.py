@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 from APIAPP import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('SearchDocument_ES_web/<str:text>/', views.SearchDocument_ES_web, name='SearchDocument_ES_web'),
+    re_path(r'^\.well-known/', include('letsencrypt.urls')),
 ]
