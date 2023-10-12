@@ -19,5 +19,5 @@ from APIAPP import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('SearchDocument_ES_web/<str:text>/', views.SearchDocument_ES_web, name='SearchDocument_ES_web'),
-    re_path(r'^\.well-known/', include('letsencrypt.urls')),
+    re_path(r'^\.well-known/', include('certbot_django.server.urls')),
 ]
