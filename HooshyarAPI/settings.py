@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'after_response',
     'rest_framework',
+    "sslserver",
     'APIAPP',
 ]
 
