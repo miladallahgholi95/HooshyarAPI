@@ -58,6 +58,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SECURE_SSL_HOST = "virtualjuristic.datakaveh.com"
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 
