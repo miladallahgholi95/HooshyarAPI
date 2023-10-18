@@ -15,7 +15,9 @@ def SearchDocument_ES_web(request, text):
                              _source_includes=['name', 'category', 'datetime'],
                              request_timeout=40,
                              query=res_query,
-                             sort=["datetime.year", "datetime.month.number", "datetime.day.number", "datetime.hour","datetime.minute"],
+                             sort=[{"datetime.year": {"order": "desc"}},
+                                   {"datetime.month.number": {"order": "desc"}},
+                                   {"datetime.day.number": {"order": "desc"}}],
                              size=10)
 
     result = response['hits']['hits']
