@@ -7,7 +7,10 @@ bucket_size = 1000
 search_result_size = 100
 
 def SearchDocument_ES_web(request, text):
-    res_query = {"match_phrase": {"content": text}}
+    if text.replace(" ", "") == "":
+        res_query = {"match_all": {}}
+    else:
+        res_query = {"match_phrase": {"content": text}}
 
     index_name = "hooshyar2_document_index"
 
