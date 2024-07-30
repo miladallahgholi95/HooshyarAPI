@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from elasticsearch import Elasticsearch
 
-es_url = "192.168.50.8:9200"
+es_url = "http://192.168.50.8:9200"
 client = Elasticsearch(es_url, timeout=30)
 bucket_size = 1000
 search_result_size = 100
