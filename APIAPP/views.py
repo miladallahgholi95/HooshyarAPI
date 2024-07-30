@@ -12,7 +12,7 @@ def SearchDocument_ES_web(request, text):
     else:
         res_query = {"match_phrase": {"content": text}}
 
-    index_name = "hooshyar2_document_index"
+    index_name = "hooshyar_document_index"
 
     response = client.search(index=index_name,
                              _source_includes=['name', 'category', 'datetime'],
