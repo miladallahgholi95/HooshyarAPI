@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    "django_extensions",
     'corsheaders',
     'asymmetric_jwt_auth',
     'certbot_django.server',
